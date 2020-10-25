@@ -1,0 +1,75 @@
+entity CaseAudit {
+	id Long,
+    caseId String,
+    userFullName String,
+    auditDate LocalDate,
+    event String,
+    note Lob
+}
+
+entity CaseAlert {
+	id Long,
+	alertId String,
+    caseId String
+}
+
+entity AlertAudit {
+	id Long,
+    alertId String,
+    userFullName String,
+    auditDate LocalDate,
+    event String,
+    note Lob
+}
+
+entity Case {
+    caseId String,
+    domain String,
+    caseName String,
+    accountNum String,
+    cif String,
+    clientFirstName String,
+    clientLastName String,
+    caseTypeName String,
+    statusName String,
+    businessUnit String,
+    createDate LocalDate,
+    closedDate LocalDate,
+    sarFiled Boolean,
+    deleted Boolean,
+    archived Boolean
+}
+
+entity Alert {
+	alertId String,
+    domain String,
+    accountNum String,
+    cif String,
+    clientFirstName String,
+    clientLastName String,
+    alertTypeName String,
+    statusName String,
+    businessUnit String,
+    score Integer,
+    createDate LocalDate,
+    closedDate LocalDate,
+    caseCreated Boolean,
+    deleted Boolean,
+    archived Boolean
+}
+
+entity AlertRule {
+	id Long,
+	alertId String,
+    ruleName String,
+	excessValue String
+}
+
+// Set pagination options
+paginate * with pagination
+
+// Use Data Transfert Objects (DTO)
+dto * with mapstruct
+
+// Set service options to all except few
+service all with serviceImpl
