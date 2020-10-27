@@ -10,4 +10,21 @@ import org.springframework.boot.context.properties.ConfigurationProperties;
  */
 @ConfigurationProperties(prefix = "application", ignoreUnknownFields = false)
 public class ApplicationProperties {
+
+	private AWS aws = new AWS();
+
+	public AWS getAws() {
+		return aws;
+	}
+
+	public void setAws(AWS aws) {
+		this.aws = aws;
+	}
+
+	@Override
+	public String toString() {
+		return "ApplicationProperties [aws=" + aws + "]";
+	}
+	
 }
+

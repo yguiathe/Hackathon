@@ -97,4 +97,15 @@ jhipster:
 # https://www.jhipster.tech/common-application-properties/
 # ===================================================================
 
-# application:
+application:
+  aws:
+    credentials:
+      accessKey: AKIAJYDJLNJZH3HG63UQ
+      secretKey: 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
+    region:
+      name: us-west-1
+    athena:
+      output-bucket: 's3://fcrm-historical-data/output'
+      database: fcrm
+      client-time-execution: 100000
+      sleep-amount-ms: 1000
